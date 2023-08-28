@@ -1,9 +1,26 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { FaUserPlus, FaUserCircle, FaUserShield } from "react-icons/fa"
 
+
 const AccueilTarifNavette = () => {
+
+    const [isAfficher , setIsAfficher] =useState(false)
+
+    const showElement = ()=>{
+        let scrollValue =(window.scrollY + window.innerHeight) / document.body.offsetHeight
+        if (scrollValue > 0.23 && !isAfficher){
+            setIsAfficher(true)
+        }
+        else if (scrollValue < 0.25 && isAfficher){
+            setIsAfficher(false)
+        }
+    }
+    window.addEventListener('scroll', showElement)
+
+    const styleTarifNavette = isAfficher ? "container-fluid  mb-5 container-AccueilSolutionDeplacement styleShowTarifNavette "  : "container-fluid  mb-5 container-AccueilSolutionDeplacement styleHideTarifNavette"
+
     return (
-        <div className='container-fluid  mb-5 container-AccueilSolutionDeplacement'>
+        <div className={styleTarifNavette}>
             <div className='container mt-5 mb-5' >
                 <center >
                     <div className=' d-flex flex-column justify-content-center align-items-center ' >

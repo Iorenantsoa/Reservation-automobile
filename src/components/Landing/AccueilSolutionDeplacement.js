@@ -10,27 +10,24 @@ const AccueilSolutionDeplacement = () => {
     const showElement = ()=>{
         let scrollValue = (window.innerHeight + window.scrollY) / document.body.offsetHeight
         
-        // console.log(window.scrollY)
-        // console.log(window.innerHeight)
-        // console.log(document.body.offsetHeight)
-
-        // console.log(scrollValue)
-        if ((scrollValue > 0.17) && !isAfficher ){
+         
+        if ((scrollValue > 0.13) && !isAfficher ){
             setIsAfficher(true) 
-        } else if ((scrollValue < 0.17) && isAfficher){
-            setIsAfficher(false)
         }
+        // else if ((scrollValue < 0.13) && isAfficher){
+        //     setIsAfficher(false)
+        // }
     }
 
     window.addEventListener('scroll' , showElement)
 
 
 
-    const containerStyle = !isAfficher ? "container-fluid mt-5  container-AccueilSolutionDeplacement styleHideContainer" :  "container-fluid mt-5  container-AccueilSolutionDeplacement styleShowContainer"
+    const containerStyle = !isAfficher ? "container-fluid mt-5  container-AccueilSolutionDeplacement styleHideContainer" :  "container-fluid mt-5  container-AccueilSolutionDeplacement styleShowContainer "
 
-    // const classContainer = 
-    
-
+    const navettePremiumStyle = !isAfficher ? "col-md-3 col-lg-3 col-sm-12 shadow p-2 m-3 styleHideNavettePremium" : "col-md-3 col-lg-3 col-sm-12 shadow p-2 m-3 styleShowNavettePremium" 
+    const locationVoiture = !isAfficher ? "col-md-3 col-lg-3 col-sm-12 shadow p-2 m-3 styleHideLocationVoiture" : "col-md-3 col-lg-3 col-sm-12 shadow p-2 m-3 styleShowLocationVoiture" 
+    const transfertIvato = !isAfficher ? "col-md-3 col-lg-3 col-sm-12 shadow p-2 m-3 styleHidePlane" : "col-md-3 col-lg-3 col-sm-12 shadow p-2 m-3 styleShowPlane" 
     
     return (
         <div  className={containerStyle} >
@@ -46,7 +43,7 @@ const AccueilSolutionDeplacement = () => {
 
 
                 <div className='row mt-3 d-flex justify-content-center align-items-center'>
-                    <div className='col-md-3 col-lg-3 col-sm-12 shadow p-2 m-3'>
+                    <div className={navettePremiumStyle}>
                         <div className='solution-deplacement-image-container d-flex flex-column justify-content-center align-items-center' >
                             <img src={carSide} alt='imageNavette' />
                         </div>
@@ -55,7 +52,7 @@ const AccueilSolutionDeplacement = () => {
                             <p className='text-center'>Vos trajets entre Tana et Antsirabe. Confort, ponctualité et sécurité.</p>
                         </div>
                     </div>
-                    <div className='col-md-3 col-lg-3 col-sm-12 shadow p-2 m-3'>
+                    <div className={transfertIvato}>
                         <div className='solution-deplacement-image-container d-flex flex-column justify-content-center align-items-center' >
                             <img src={plane} alt='imagePlane' />
                         </div>
@@ -64,7 +61,7 @@ const AccueilSolutionDeplacement = () => {
                             <p className='text-center'>Votre accueil personnalisé entre l'aéroport et votre hôtel et vice-versa.</p>
                         </div>
                     </div>
-                    <div className='col-md-3 col-lg-3 col-sm-12 shadow p-2 m-3'>
+                    <div className={locationVoiture}>
                         <div className='solution-deplacement-image-container d-flex flex-column justify-content-center align-items-center'  >
                             <img src={carSide2} alt='imageCar' />
                         </div>

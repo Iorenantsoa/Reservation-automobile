@@ -98,8 +98,47 @@ p{
     transition : 1.5s
 }
 .styleShowContainer  {
-    /* display: block ;  */
     transform : translate(0 , 0);
     opacity : 1;
     transition : 1.5s
+}
+
+.styleShowNavettePremium {
+    transform : translate(0 , 0);
+    opacity: 1;
+    transition : 1.8s
+}
+.styleHideNavettePremium {
+    opacity: 0;
+    transform : translate(-100% , -100%); 
+    transition : 1.8s
+}
+
+.styleShowLocationVoiture {
+    transform : translate(0 , 0);
+    opacity: 1;
+    transition : 1.8s
+}
+.styleHideLocationVoiture {
+    transform : translate(100% , -100%); 
+    opacity: 0;
+    transition : 1.8s
+}
+
+.styleShowPlane {
+    transform : translate(0 , 0);
+    opacity: 1;
+    transition : 1.8s
+}
+.styleHidePlane {
+    transform : translate(-100%, -1000%); 
+    opacity: 0; 
+}
+.styleHideTarifNavette{
+    opacity: 0;
+    transition : 1.5s
+}
+.styleShowTarifNavette{
+    opacity: 1;
+    transition : 3s
 }
