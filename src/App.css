@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+
+}
+p{ 
+    color:rgba(0, 0, 0, 0.6);
+}
+
+.headContent{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.NavLink {
+    font-size: 1.2rem;
+    font-weight:600
+}
+.logo {
+    /* color : rgba(0, 0, 0, 0.3) */
+    color : rgb(2, 114, 130);
+}
+.banner-contentainer{
+    height: 75vh;
+    width: 100%;
+}
+.banner-contentainer img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: cover;
+}
+
+.container-AccueilSolutionDeplacement{
+    width: 100%;
+    min-height: 50vh;
+}
+.maReservationBtn{
+    background-color: rgb(255,255,255);
+    color :rgba(0, 0, 0, 0.4)
+}
+.maReservationBtn:hover{
+    background-color: rgba(255,255,255 , 0.5);
+    transition : 0.5s
+}
+.btnAccueilVoirTousArticles{
+    background-color: rgb(2,114,130);
+    color :rgba(255,255,255)
+}
+.btnAccueilVoirTousArticles:hover{
+    background-color: rgba(2,114,130 , 0.8);
+    transition : 0.5s
+}
+
+.footerTitle , .copyrightFooter{
+    color : whitesmoke
+}
+.footerParagraphe {
+    color:rgba(255, 255, 255, 0.8);
+}
+/* .tarifReservationActive{
+    transform: scale(1 , 1.1 ) ;
+    border-radius:"5px" ;
+    background-color: rgb(2,114,130);
+    color:rgba(255, 255, 255);
+}
+.tarifReservationActive p{
+    color: rgba(255, 255, 255 , 0.8);
+} */
+
+.navbarFixed {
+    position : fixed ; 
+    top : 0 ; 
+    left : 0;
+    z-index: 99;
+    width: 100%;
+    background-color: rgb(2,114,130);
+    transition: 0.5s;
+}
+
+.navbarFixedColor {
+    color: whitesmoke;
+}
+
+.styleHideContainer  {
+    /* display: block ;  */
+    transform : translate(0 , 200%);
+    opacity : 0;
+    transition : 1.5s
+}
+.styleShowContainer  {
+    /* display: block ;  */
+    transform : translate(0 , 0);
+    opacity : 1;
+    transition : 1.5s
+}
