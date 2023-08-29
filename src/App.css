@@ -153,7 +153,7 @@ p{
 }
 .styleShowCharteQualite{
     opacity: 1;
-    transition : 2s
+    transition : 1.5s
 }
 
 .styleShowNosEngagement {
@@ -181,4 +181,36 @@ p{
     transition : 1.8s
 }
 
- 
+.styleHideActualiteInfo{
+    opacity: 0;
+    transition : 1.5s
+}
+.styleShowActualiteInfo{
+    opacity: 1;
+    transition : 0.5s
+}
+.styleShowElmtActuInfo {
+    transform : translate(0 , 0);
+    display: block;
+    opacity: 1;
+    transition : 1.8s
+}
+.styleHideElmtActuInfo {
+    transform : translate(0% ,100%); 
+    display :block;
+    opacity: 0;
+    transition : 1.8s
+}
+.styleShowTemoignage {
+    transform : translate(0 , 0);
+    display: block;
+    opacity: 1;
+    transition : 1.8s
+}
+.styleHideTemoignage {
+    transform : translate(0% ,100%); 
+    display :block;
+    opacity: 0;
+    transition : 1.8s
+}
+

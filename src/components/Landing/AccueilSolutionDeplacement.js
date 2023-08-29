@@ -26,7 +26,7 @@ const AccueilSolutionDeplacement = () => {
 
             if (window.scrollY > positionTop && !isAfficher) {
                 setIsAfficher(true)
-            } else if (window.scrollY < positionTop && isAfficher) {
+            } else if (window.scrollY < positionTop && isAfficher) { 
                 setIsAfficher(false)
             }
         }

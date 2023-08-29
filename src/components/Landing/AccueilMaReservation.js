@@ -38,7 +38,7 @@ const AccueilMaReservation = () => {
             <div className={styleMaReservation} style={{ backgroundColor: "rgb(206,221,55)", minHeight: "40vh" }}>
                 <div className='container '>
                     <h1 className='text-white'>Ma réservation</h1>
-                    <p className='text-white'>Contacter nous pour réserver votre place a bord de la navette, un <button className="btn btn-md text-black maReservationBtn fs-6 shadow" >Navette Premium</button> <button className="btn btn-md text-black maReservationBtn fs-6 shadow"  >Véhicule / Transfert</button> transfert à l'aeroport ou louer un véhicule pour voyager.</p>
+                    <p className='text-white'>Contacter nous pour réserver votre place a bord de la navette, un <button className="btn btn-md text-black maReservationBtn fs-6 shadow m-2" >Navette Premium</button> <button className="btn btn-md text-black maReservationBtn fs-6 shadow m-2"  >Véhicule / Transfert</button> transfert à l'aeroport ou louer un véhicule pour voyager.</p>
                 </div>
             </div>
         </div>

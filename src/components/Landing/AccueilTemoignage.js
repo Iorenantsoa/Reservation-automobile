@@ -1,17 +1,53 @@
-import React from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 
 const AccueilTemoignage = () => {
+    const [isAfficher, setIsAfficher] = useState(false)
+    const [elementPositionTop, setElementPositionTop] = useState(null)
+    const [elementHeight, setElementHeight] = useState(null)
+
+    const elementRef = useRef(null)
+
+    useEffect(() => {
+
+        const element = elementRef.current
+
+        if (element) {
+            const rect = element.getBoundingClientRect()
+            setElementPositionTop(rect.top)
+            setElementHeight(rect.height)
+        }
+        const topvalue = elementPositionTop + window.scrollY - (window.innerHeight)/2
+
+
+        const handleScroll = () => {
+
+            if (window.scrollY < topvalue && isAfficher) {
+                setIsAfficher(false)
+            } else if (window.scrollY > topvalue && !isAfficher) {
+                setIsAfficher(true)
+            }
+        } 
+        window.addEventListener('scroll', handleScroll)
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+
+    }, [elementPositionTop, elementHeight, isAfficher])
+
+    const styleTemoignage = !isAfficher ? 'mb-5 styleHideTemoignage' : 'mb-5 styleShowTemoignage'
+
     return (
-        <div className='mb-5 '>
-            <div className='container mt-5 '>
-                <div className='container mt-5' >
-                    <center >
-                        <div className=' d-flex flex-column justify-content-center align-items-center ' >
-                            <h1 className='bold'>Nos clients témoignent</h1>
-                        </div>
-                    </center>
-                </div>
-                <div className="row row-cols-1 row-cols-md-2 g-4 mt-3">
+        <div ref={elementRef} >
+            <div className={styleTemoignage}>
+                <div className='container mt-5 '>
+                    <div className='container mt-5' >
+                        <center >
+                            <div className=' d-flex flex-column justify-content-center align-items-center ' >
+                                <h1 className='bold'>Nos clients témoignent</h1>
+                            </div>
+                        </center>
+                    </div>
+                    <div className="row row-cols-1 row-cols-md-2 g-4 mt-3">
                         <div className="col">
                             <div className="card">
                                 <div className="card-body">
@@ -44,7 +80,7 @@ const AccueilTemoignage = () => {
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div className="col">
                             <div className="card">
                                 <div className="card-body">
@@ -130,6 +166,7 @@ const AccueilTemoignage = () => {
                             </div>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     )

@@ -19,8 +19,7 @@ const AccueilCharteQualite = () => {
             const rect = element.getBoundingClientRect()
             setElementPositionTop(rect.top) 
             setElementHeight(rect.height)
-        }
-        // const topvalue = elementPositionTop + window.scrollY  
+        } 
         const topvalue = elementPositionTop + window.scrollY - (window.innerHeight)/2 
 
 
