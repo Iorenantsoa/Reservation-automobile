@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: smooth;
+}
 *{
     margin: 0;
     padding: 0;
@@ -42,6 +45,7 @@ p{
 
 .container-AccueilSolutionDeplacement{
     width: 100%;
+    overflow-x: hidden;
     min-height: 50vh;
 }
 .maReservationBtn{
@@ -214,3 +218,23 @@ p{
     transition : 1.8s
 }
 
+ .fleche{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(2,114,130);
+    color: white;  
+    transition: 1s;
+ }
+.showFleche{  
+    display: block;
+    transition:1s;
+}
+
+.hideFleche{ 
+    display: none;
+    transition:1s;
+}

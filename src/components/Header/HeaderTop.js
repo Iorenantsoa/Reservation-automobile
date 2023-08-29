@@ -4,7 +4,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { BiPhoneCall } from "react-icons/bi";
 const HeaderTop = () => {
     return (
-        <div  style={{"backgroundColor":"rgba(0,0,0,0.4)"}}>
+        <div  style={{"backgroundColor":"rgba(0,0,0,0.4)"}} id="navTop">
             <div className='container d-flex justify-content-center pt-2 '>
                 <div className='container d-flex  justify-content-between flex-wrap'>
                     <div>
