@@ -1,36 +1,72 @@
-import React, {useState} from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import carSide from '../../images/car-side.png'
 import carSide2 from '../../images/car-side2.png'
 import plane from '../../images/plane.png'
 
 const AccueilSolutionDeplacement = () => {
 
-    const [isAfficher , setIsAfficher]= useState(false)
+    const elementRef = useRef(null);
 
-    const showElement = ()=>{
-        let scrollValue = (window.innerHeight + window.scrollY) / document.body.offsetHeight
-        
-         
-        if ((scrollValue > 0.13) && !isAfficher ){
-            setIsAfficher(true) 
+    const [isAfficher, setIsAfficher] = useState(false)
+    const [elementPositionTop, setElementPositionTop] = useState(null)
+    const [elementHeight, setElementHeight] = useState(null)
+
+
+    useEffect(() => {
+
+        const element = elementRef.current
+        if (element) {
+            const rect = element.getBoundingClientRect()
+            setElementPositionTop(rect.top)
+            setElementHeight(rect.height)
         }
-        // else if ((scrollValue < 0.13) && isAfficher){
-        //     setIsAfficher(false)
-        // }
-    }
 
-    window.addEventListener('scroll' , showElement)
+        const topvalue = elementPositionTop + window.scrollY
+        const showElement = () => {
+
+            if (window.scrollY > topvalue && !isAfficher) {
+                setIsAfficher(true)
+            } else if (window.scrollY < topvalue && isAfficher) {
+                setIsAfficher(false)
+            }
+        }
+
+        window.addEventListener('scroll', showElement)
+
+        return () => {
+            window.removeEventListener('scroll' , showElement)
+        }
+    })
 
 
 
-    const containerStyle = !isAfficher ? "container-fluid mt-5  container-AccueilSolutionDeplacement styleHideContainer" :  "container-fluid mt-5  container-AccueilSolutionDeplacement styleShowContainer "
 
-    const navettePremiumStyle = !isAfficher ? "col-md-3 col-lg-3 col-sm-12 shadow p-2 m-3 styleHideNavettePremium" : "col-md-3 col-lg-3 col-sm-12 shadow p-2 m-3 styleShowNavettePremium" 
-    const locationVoiture = !isAfficher ? "col-md-3 col-lg-3 col-sm-12 shadow p-2 m-3 styleHideLocationVoiture" : "col-md-3 col-lg-3 col-sm-12 shadow p-2 m-3 styleShowLocationVoiture" 
-    const transfertIvato = !isAfficher ? "col-md-3 col-lg-3 col-sm-12 shadow p-2 m-3 styleHidePlane" : "col-md-3 col-lg-3 col-sm-12 shadow p-2 m-3 styleShowPlane" 
-    
+
+
+    // const showElement = ()=>{
+
+    //     let scrollValue = (window.innerHeight + window.scrollY) / document.body.offsetHeight
+
+    //     if ((scrollValue > 0.13) && !isAfficher ){
+    //         setIsAfficher(true) 
+    //     }
+    //     // else if ((scrollValue < 0.13) && isAfficher){
+    //     //     setIsAfficher(false)
+    //     // }
+    // }
+
+    // window.addEventListener('scroll' , showElement)
+
+
+
+    const containerStyle = !isAfficher ? "container-fluid mt-5  container-AccueilSolutionDeplacement styleHideContainer" : "container-fluid mt-5  container-AccueilSolutionDeplacement styleShowContainer "
+
+    const navettePremiumStyle = !isAfficher ? "col-md-3 col-lg-3 col-sm-12 shadow p-2 m-3 styleHideNavettePremium" : "col-md-3 col-lg-3 col-sm-12 shadow p-2 m-3 styleShowNavettePremium"
+    const locationVoiture = !isAfficher ? "col-md-3 col-lg-3 col-sm-12 shadow p-2 m-3 styleHideLocationVoiture" : "col-md-3 col-lg-3 col-sm-12 shadow p-2 m-3 styleShowLocationVoiture"
+    const transfertIvato = !isAfficher ? "col-md-3 col-lg-3 col-sm-12 shadow p-2 m-3 styleHidePlane" : "col-md-3 col-lg-3 col-sm-12 shadow p-2 m-3 styleShowPlane"
+
     return (
-        <div  className={containerStyle} >
+        <div ref={elementRef} className={containerStyle} >
             <div className='container mt-5 mb-5' >
                 <center >
                     <div className=' d-flex flex-column justify-content-center align-items-center ' >

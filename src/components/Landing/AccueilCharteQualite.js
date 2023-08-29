@@ -1,13 +1,48 @@
-import React from 'react';
-
+import React,{useState , useEffect , useRef} from 'react'; 
 import { AiFillDashboard, AiFillClockCircle } from "react-icons/ai";
 import { VscReferences } from "react-icons/vsc";
 import { GiTrophyCup } from "react-icons/gi";
 import imageChartQualite from "../../images/accueil-charte-qualite.jpg"
 
 const AccueilCharteQualite = () => {
+    const [isAfficher , setIsAfficher] = useState(false)
+    const [elementPositionTop , setElementPositionTop] = useState(null) 
+    const [elementHeight, setElementHeight] = useState(null)
+
+    const elementRef = useRef(null)
+
+    useEffect(()=>{
+
+        const element = elementRef.current
+
+        if (element){
+            const rect = element.getBoundingClientRect()
+            setElementPositionTop(rect.top) 
+            setElementHeight(rect.height)
+        }
+        const topvalue = elementPositionTop + window.scrollY - (window.innerHeight)/2 
+
+
+        const handleScroll = ()=>{ 
+ 
+            if (window.scrollY < topvalue && isAfficher){
+                setIsAfficher(false) 
+            }else if(window.scrollY > topvalue && !isAfficher){
+                setIsAfficher(true) 
+            }
+        }
+        window.addEventListener('scroll' , handleScroll)
+        return ()=>{
+            window.removeEventListener('scroll' ,  handleScroll)
+        }
+
+    }, [elementPositionTop, elementHeight, isAfficher ])
+
+    const styleCharte = !isAfficher ? 'container pt-5 styleHideCharteQualite' : 'container pt-5 styleShowCharteQualite' 
+
+
     return (
-        <div className='container pt-5'>
+        <div ref = {elementRef} className={styleCharte}>
             <div className=' row  mt-3 ' style={{ minHeight: "60vh" }}>
                 <div className='col-lg-7 col-md-6 col-sm-10'>
                     <div className='mb-4'>

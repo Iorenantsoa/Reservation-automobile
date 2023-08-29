@@ -11,9 +11,9 @@ const AccueilTarifNavette = () => {
         if (scrollValue > 0.23 && !isAfficher){
             setIsAfficher(true)
         }
-        else if (scrollValue < 0.25 && isAfficher){
-            setIsAfficher(false)
-        }
+        // else if (scrollValue < 0.25 && isAfficher){
+        //     setIsAfficher(false)
+        // }
     }
     window.addEventListener('scroll', showElement)
 
