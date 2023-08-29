@@ -20,11 +20,12 @@ const AccueilCharteQualite = () => {
             setElementPositionTop(rect.top) 
             setElementHeight(rect.height)
         }
+        // const topvalue = elementPositionTop + window.scrollY  
         const topvalue = elementPositionTop + window.scrollY - (window.innerHeight)/2 
 
 
         const handleScroll = ()=>{ 
- 
+  
             if (window.scrollY < topvalue && isAfficher){
                 setIsAfficher(false) 
             }else if(window.scrollY > topvalue && !isAfficher){

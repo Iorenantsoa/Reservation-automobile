@@ -1,26 +1,45 @@
-import React, {useState} from 'react'
+import React, {useState , useEffect , useRef} from 'react'
 import { FaUserPlus, FaUserCircle, FaUserShield } from "react-icons/fa"
 
 
 const AccueilTarifNavette = () => {
 
+    const elementRef = useRef(null)
     const [isAfficher , setIsAfficher] =useState(false)
+    const [elementPositionTop , setElementPositionTop] = useState(null)
+    const [elementHeight , setElementHeight] = useState(null)
 
-    const showElement = ()=>{
-        let scrollValue =(window.scrollY + window.innerHeight) / document.body.offsetHeight
-        if (scrollValue > 0.23 && !isAfficher){
-            setIsAfficher(true)
+    useEffect(()=>{
+        const element = elementRef.current
+
+        if(element){
+            const rect = element.getBoundingClientRect()
+            setElementPositionTop(rect.top)
+            setElementHeight(rect.height)
         }
-        // else if (scrollValue < 0.25 && isAfficher){
-        //     setIsAfficher(false)
-        // }
-    }
-    window.addEventListener('scroll', showElement)
+        
+        const positionTop = elementPositionTop + window.scrollY - (window.innerHeight) / 2
+        const handleScroll = ()=>{
+            if (window.scrollY > positionTop && !isAfficher){
+                setIsAfficher(true)
+            }else if (window.scrollY < positionTop && isAfficher){
+                setIsAfficher(false)
+            }
+        }
+        window.addEventListener('scroll', handleScroll)
+
+        return ()=>{
+            window.removeEventListener('scroll',handleScroll)
+        }
+    })
+
+    
 
     const styleTarifNavette = isAfficher ? "container-fluid  mb-5 container-AccueilSolutionDeplacement styleShowTarifNavette "  : "container-fluid  mb-5 container-AccueilSolutionDeplacement styleHideTarifNavette"
 
     return (
-        <div className={styleTarifNavette}>
+        <div  ref = {elementRef} className={styleTarifNavette}>
+        
             <div className='container mt-5 mb-5' >
                 <center >
                     <div className=' d-flex flex-column justify-content-center align-items-center ' >

@@ -135,7 +135,7 @@ p{
     transition : 1.8s
 }
 .styleHidePlane {
-    /* transform : translate(-100%, -1000%);  */
+    transition : 1.8s ;
     opacity: 0; 
 }
 .styleHideTarifNavette{
@@ -153,48 +153,32 @@ p{
 }
 .styleShowCharteQualite{
     opacity: 1;
-    transition : 3s
+    transition : 2s
 }
 
-/* const [isAfficher , setIsAfficher] = useState(false)
-    const [elementPositionTop , setElementPositionTop] = useState(null)
-    const [elementPositionBottom , setElementPositionBottom] = useState(null)
-    const [elementHeight, setElementHeight] = useState(null)
+.styleShowNosEngagement {
+    transform : translate(0 , 0);
+    /* display: block; */
+    opacity: 1;
+    transition : 1.8s
+}
+.styleHideNosEngagement {
+    transform : translate(-100% , 0); 
+    display :none;
+    opacity: 0;
+    transition : 1.8s
+}
 
-    const elementRef = useRef(null)
+.styleShowMaReservation {
+    transform : translateX( 0);
+    display: block;
+    opacity: 1;
+    transition : 1.8s
+}
+.styleHideMaReservation {
+    transform : translateX(110%); 
+    display :none;  
+    transition : 1.8s
+}
 
-    useEffect(()=>{
-
-        const element = elementRef.current
-
-        if (element){
-            const rect = element.getBoundingClientRect()
-            setElementPositionTop(rect.top)
-            setElementPositionBottom(rect.bottom)
-            setElementHeight(rect.height)
-        }
-
-        const handleScroll = ()=>{
-            // console.log('=============================')
-            console.log("srollY : "+ window.scrollY)
-
-            const scrollValue = elementPositionTop +(window.innerHeight)/2
-
-            console.log("scrollValue :"+ scrollValue) 
-
-            if (window.scrollY < scrollValue && !isAfficher){
-                setIsAfficher(true)
-                // console.log(isAfficher)
-            }else if(window.scrollY > scrollValue && isAfficher){
-                setIsAfficher(false)
-                // console.log(isAfficher)
-            }
-        }
-        window.addEventListener('scroll' , handleScroll)
-        return ()=>{
-            window.removeEventListener('scroll' ,  handleScroll)
-        }
-
-    }, [])
-
-    const styleCharte = isAfficher ? 'container pt-5 styleHideCharteQualite' : 'container pt-5 styleShowCharteQualite'  */
+ 
