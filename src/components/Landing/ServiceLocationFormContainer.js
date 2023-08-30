@@ -1,13 +1,18 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const ServiceLocationFormContainer = () => {
+    const [selectedMotif, setSelectedMotif] = useState('LocationVehicule');
+
+    const handleMotifChange = (e) => {
+        setSelectedMotif(e.target.value);
+    };
     return (
         <div className='col-lg-8 col-md-7 col-sm-10'>
             <form>
                 <div className="row">
                     <div className="col-lg-6 col-md-8 col-sm-10">
                         <label>Votre nom*</label><br />
-                        <input className="form-control" for="name" id="name" type="text" /><br />
+                        <input className="form-control" htmlFor="name" id="name" type="text" /><br />
                     </div>
                     <div className="col-lg-6 col-md-8 col-sm-10">
                         <label>Votre numéro de téléphone*</label><br />
@@ -27,12 +32,12 @@ const ServiceLocationFormContainer = () => {
                 <div className="row">
                     <div className="col-lg-6 col-md-8 col-sm-10"> 
                         <label className="m-2">
-                            <input type="radio" name="motif" value="LocationVehicule" checked /> Location de véhicule
+                            <input type="radio" name="motif" value="LocationVehicule" checked={selectedMotif === 'LocationVehicule'} onChange={handleMotifChange} /> Location de véhicule
                         </label>
                     </div>
                     <div className="col-lg-6 col-md-8 col-sm-10"> 
                         <label>
-                            <input type="radio" name="motif" value="TransfertAeroport" /> Transfert Aéroport
+                            <input type="radio" name="motif" value="TransfertAeroport" checked={selectedMotif === 'TransfertAeroport'} onChange={handleMotifChange} /> Transfert Aéroport
                         </label> 
                     </div> 
                 </div> 

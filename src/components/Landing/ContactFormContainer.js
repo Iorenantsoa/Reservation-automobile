@@ -7,7 +7,7 @@ const ContactFormContainer = () => {
                 <div className="row">
                     <div className="col-lg-6 col-md-8 col-sm-10">
                         <label>Votre nom*</label><br />
-                        <input className="form-control" for="name" id="name" type="text" /><br />
+                        <input className="form-control" htmlFor="name" id="name" type="text" /><br />
                     </div> 
                 </div> 
                 <div className="row">
@@ -24,7 +24,7 @@ const ContactFormContainer = () => {
                 </div>
                 <div className="row">
                     <div className="col-lg-8 col-md-8 col-sm-12">
-                        <label for="passagers">Votre Message*</label><br />
+                        <label htmlFor="passagers">Votre Message*</label><br />
                         <textarea className="form-control" style={{ height: "300px", width: "100%" }} /><br />
                     </div>
                 </div>

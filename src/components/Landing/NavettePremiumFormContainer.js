@@ -1,13 +1,25 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const NavettePremiumFormContainer = () => {
+
+    const [selectedTarif, setSelectedTarif] = useState('Eco');
+    const [selectedFormule, setSelectedFormule] = useState('Simple');
+
+    const handleFormuleChange = (e) => {
+        setSelectedFormule(e.target.value);
+    };
+
+    const handleTarifChange = (e) => {
+        setSelectedTarif(e.target.value);
+    };
+
     return (
         <div className='col-lg-8 col-md-7 col-sm-10'>
             <form>
                 <div className="row">
                     <div className="col-lg-6 col-md-8 col-sm-10">
                         <label>Votre nom*</label><br />
-                        <input className="form-control" for="name" id="name" type="text" /><br />
+                        <input className="form-control" htmlFor="name" id="name" type="text" /><br />
                     </div>
                     <div className="col-lg-6 col-md-8 col-sm-10">
                         <label>Votre numéro de téléphone*</label><br />
@@ -26,7 +38,7 @@ const NavettePremiumFormContainer = () => {
                 </div>
                 <div className="row">
                     <div className="col-lg-6 col-md-8 col-sm-10">
-                        <label for="tarjetEtHoraireDepart">Trajet et horaire de départ*</label>
+                        <label htmlFor="tarjetEtHoraireDepart">Trajet et horaire de départ*</label>
                         <select className="form-control">
                             <option>---</option>
                             <option value="Tana vers Antsirabe : 5h">Tana vers Antsirabe : 5h</option>
@@ -43,30 +55,31 @@ const NavettePremiumFormContainer = () => {
                         </select>
                     </div>
                     <div className="col-lg-6 col-md-8 col-sm-10">
-                        <label for="tarif">Tarif*</label><br />
+                        <label htmlFor="tarif">Tarif*</label><br />
                         <label className="m-2">
-                            <input type="radio" name="tarif" value="Eco" checked /> Eco
+                            <input type="radio" name="tarif" value="Eco" checked={selectedTarif === 'Eco'} onChange={handleTarifChange} /> Eco
                         </label>
                         <label>
-                            <input type="radio" name="tarif" value="Standard" /> Standard
+                            <input type="radio" name="tarif" value="Standard" checked={selectedTarif === 'Standard'}  onChange={handleTarifChange}/> Standard
                         </label>
                         <label className="m-2">
-                            <input type="radio" name="tarif" value="Gold" /> Gold
+                            <input type="radio" name="tarif" value="Gold" checked={selectedTarif === 'Gold'}  onChange={handleTarifChange}/> Gold
                         </label><br />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-lg-6 col-md-8 col-sm-10">
-                        <label for="formules">Formules*</label><br />
+                        <label htmlFor="formules">Formules*</label><br />
                         <label className="m-2">
-                            <input type="radio" name="formule" value="Simple" checked /> Simple
+                            <input type="radio" name="formule" value="Simple" checked={selectedFormule === 'Simple'} onChange={handleFormuleChange} /> Simple
                         </label>
                         <label className="m-2">
-                            <input type="radio" name="formule" value="Pack" /> Pack
+                            <input type="radio" name="formule" value="Pack" checked={selectedFormule === 'Pack'}
+                                onChange={handleFormuleChange} /> Pack
                         </label>
                     </div>
                     <div className="col-lg-6 col-md-8 col-sm-10">
-                        <label for="passagers">Passagers*</label><br />
+                        <label htmlFor="passagers">Passagers*</label><br />
                         <div className="m-3 d-flex flex-row  align-items-center justify-content-center">
                             <input className="form-control"  type="number" name="passagerEnfants" /> 
                             <label > Enfants</label>
@@ -79,7 +92,7 @@ const NavettePremiumFormContainer = () => {
                 </div>
                 <div className="row">
                     <div className="col-lg-12 col-md-12 col-sm-12">
-                        <label for="passagers">Votre Message*</label><br />
+                        <label htmlFor="passagers">Votre Message*</label><br />
                         <textarea className="form-control" style={{ height: "300px", width: "100%" }} /><br />
                     </div>
                 </div>
