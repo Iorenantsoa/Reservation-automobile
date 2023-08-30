@@ -4,7 +4,7 @@ import NavettePremiumRightContainer from './NavettePremiumRightContainer'
 
 const NavettePremiumContainer = () => {
     return (
-        <div className="m-5">
+        <div className="mt-5 mb-5">
             <div className='row '>
                 <NavettePremiumFormContainer />
                 <NavettePremiumRightContainer />

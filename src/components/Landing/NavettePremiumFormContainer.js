@@ -11,35 +11,35 @@ const NavettePremiumFormContainer = () => {
                     </div>
                     <div className="col-lg-6 col-md-8 col-sm-10">
                         <label>Votre numéro de téléphone*</label><br />
-                        <input name="phone" id="phone" type="text" /><br />
+                        <input className="form-control" name="phone" id="phone" type="text" /><br />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-lg-6 col-md-8 col-sm-10">
                         <label>Votre Email</label><br />
-                        <input name="email" id="email" type="email" /><br />
+                        <input className="form-control" name="email" id="email" type="email" /><br />
                     </div>
                     <div className="col-lg-6 col-md-8 col-sm-10">
                         <label>Date de départ*</label><br />
-                        <input name="dateDepart" id="dateDepart" type="date" /><br />
+                        <input className="form-control" name="dateDepart" id="dateDepart" type="date" /><br />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-lg-6 col-md-8 col-sm-10">
                         <label for="tarjetEtHoraireDepart">Trajet et horaire de départ*</label>
-                        <select >
+                        <select className="form-control">
                             <option>---</option>
-                            <option>Tana vers Antsirabe : 5h</option>
-                            <option>Tana vers Antsirabe : 7h</option>
-                            <option>Tana vers Antsirabe : 9h</option>
-                            <option>Tana vers Antsirabe : 13h</option>
-                            <option>Tana vers Antsirabe : 15h</option>
+                            <option value="Tana vers Antsirabe : 5h">Tana vers Antsirabe : 5h</option>
+                            <option value="Tana vers Antsirabe : 7h">Tana vers Antsirabe : 7h</option>
+                            <option value="Tana vers Antsirabe : 9h">Tana vers Antsirabe : 9h</option>
+                            <option value="Tana vers Antsirabe : 13h">Tana vers Antsirabe : 13h</option>
+                            <option value="Tana vers Antsirabe : 15h">Tana vers Antsirabe : 15h</option>
                             <option></option>
-                            <option>Antsirabe vers Tana : 5h</option>
-                            <option>Antsirabe vers Tana : 7h</option>
-                            <option>Antsirabe vers Tana : 9h</option>
-                            <option>Antsirabe vers Tana : 13h</option>
-                            <option>Antsirabe vers Tana : 15h</option>
+                            <option value="Antsirabe vers Tana : 5h">Antsirabe vers Tana : 5h</option>
+                            <option value="Antsirabe vers Tana : 7h">Antsirabe vers Tana : 7h</option>
+                            <option value="Antsirabe vers Tana : 9h">Antsirabe vers Tana : 9h</option>
+                            <option value="Antsirabe vers Tana : 13h">Antsirabe vers Tana : 13h</option>
+                            <option value="Antsirabe vers Tana : 15h">Antsirabe vers Tana : 15h</option>
                         </select>
                     </div>
                     <div className="col-lg-6 col-md-8 col-sm-10">
@@ -67,26 +67,32 @@ const NavettePremiumFormContainer = () => {
                     </div>
                     <div className="col-lg-6 col-md-8 col-sm-10">
                         <label for="passagers">Passagers*</label><br />
-                        <input type="number" name="passagerEnfants" /> <label>enfants</label>
-                        <input type="number" name="passagerAdultes" /> <label>adultes</label><br />
+                        <div className="m-3 d-flex flex-row  align-items-center justify-content-center">
+                            <input className="form-control"  type="number" name="passagerEnfants" /> 
+                            <label > Enfants</label>
+                        </div>
+                        <div className="m-3 d-flex flex-row  align-items-center justify-content-center">
+                            <input className="form-control" type="number" name="passagerAdultes" /> 
+                            <label > Adultes</label><br />
+                        </div>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-lg-12 col-md-12 col-sm-12">
                         <label for="passagers">Votre Message*</label><br />
-                        <textarea style={{ height: "300px", width: "100%" }} /><br />
+                        <textarea className="form-control" style={{ height: "300px", width: "100%" }} /><br />
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-lg-12 col-md-12 col-sm-12">
-                        <button className="navettePremiumBtn btn btn-lg btn-primary">Envoyer</button>
+                        <input className="navettePremiumBtn btn btn-lg  col-6" type='submit' value="Envoyer"/>
                     </div>
                 </div>
             </form>
 
             <div>
                 <div className="m-3">
-                    <p>Droits de bagages : 1 bagage normal (23 kg) + 1 bagage à main (10 kg).<br />Excédent tarifé.</p>
+                    <p style={{fontStyle : "italic"}}>Droits de bagages : 1 bagage normal (23 kg) + 1 bagage à main (10 kg).<br />Excédent tarifé.</p>
                 </div>
                 <div className="m-3">
                     <h3>Lieu de pause sur la route</h3>
@@ -98,14 +104,9 @@ const NavettePremiumFormContainer = () => {
                 </div>
                 <div className="m-3">
                     <h3>Retards</h3>
-                    <p>Si vous ratez la navette à cause d’un retard, vous devrez payer le montant total de vos réservations.
+                    <p>Si vous ratez la navette à cause d’un retard, vous devrez payer le montant total de vos réservations. </p>
 
-                    </p>
-
-                </div>
-                <div className="m-3">
-
-                </div>
+                </div> 
             </div>
         </div>
     )

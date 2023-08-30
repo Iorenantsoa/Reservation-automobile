@@ -241,3 +241,14 @@ Link{
     display: none;
     transition:1s;
 }
+
+.navettePremiumBtn{
+    background-color: rgb(2,114,130);
+    color: white;
+    transition: 0.5s;
+}
+.navettePremiumBtn:hover{
+    background-color: rgba(2,114,130, 0.8);
+    color: white;
+    transition: 0.5s;
+}
