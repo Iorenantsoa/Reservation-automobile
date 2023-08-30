@@ -38,7 +38,7 @@ const Navbar = () => {
       {fake }
       <nav ref={myNavBarRef} className={classforNavbar} style={{ minHeight: "12vh" , transition : "0.5s"}}>
         <div className="container ">
-          <h1 className={classforlogoNavbar}>Gasykar VIP</h1>
+          <h1 className={classforlogoNavbar}> {"<"}GasyCar{"/>"} </h1>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>

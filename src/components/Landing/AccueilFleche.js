@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import {FaArrowUp , FaCircleArrowUp } from "react-icons/fa6";
+import {FaArrowUp  } from "react-icons/fa6";
 
 const AccueilFleche = () => {
 

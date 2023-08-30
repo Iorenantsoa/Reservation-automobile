@@ -12,5 +12,5 @@ const NavettePremium = () => {
     </div>
   )
 }
-
+ 
 export default NavettePremium

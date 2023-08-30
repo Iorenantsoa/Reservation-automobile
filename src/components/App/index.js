@@ -27,7 +27,9 @@ const App = () => {
               <Route path='NavettePremium/' element={<NavettePremium />} >
                 <Route exact path='Accueil/' element={<Accueil />} />
               </Route>
-              <Route path='ServicesLocation/' element={<ServiceLocation />} />
+              <Route path='ServicesLocation/' element={<ServiceLocation />} >
+                <Route exact path='Accueil/' element={<Accueil />} />
+              </Route><Route></Route>
               <Route path='Blog/' element={<Blog />} />
               <Route path='Contact/' element={<Contact />} />
               <Route element={<PageNotFound />} />

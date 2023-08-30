@@ -31,7 +31,7 @@ const AccueilTarifNavette = () => {
         return ()=>{
             window.removeEventListener('scroll',handleScroll)
         }
-    })
+    },[elementPositionTop, elementHeight, isAfficher])
 
     
 

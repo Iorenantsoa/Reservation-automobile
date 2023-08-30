@@ -59,10 +59,10 @@ const NavettePremiumFormContainer = () => {
                     <div className="col-lg-6 col-md-8 col-sm-10">
                         <label for="formules">Formules*</label><br />
                         <label className="m-2">
-                            <input type="radio" name="formule" value="Eco" checked /> Simple
+                            <input type="radio" name="formule" value="Simple" checked /> Simple
                         </label>
                         <label className="m-2">
-                            <input type="radio" name="formule" value="Standard" /> Pack
+                            <input type="radio" name="formule" value="Pack" /> Pack
                         </label>
                     </div>
                     <div className="col-lg-6 col-md-8 col-sm-10">

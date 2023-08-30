@@ -12,7 +12,7 @@ const HeaderTop = () => {
                             <li className='m-2' ><BiPhoneCall/> 0340777790</li>
                             <li className='m-2' ><FaLocationDot/> Châlet des Roses,Antsahavola,Antananarivo</li>
                             <li className='m-2' ><FaEnvelope/> contact@gasyvip.com</li>
-                            <li className='m-2' ><FaFacebook/> gasyKar VIP</li>
+                            <li className='m-2' ><FaFacebook/> {"<"}GasyCar{"/>"}</li>
                         </ul>
                     </div>
                 </div>
