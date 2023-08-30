@@ -35,7 +35,7 @@ const AccueilTarifNavette = () => {
 
     
 
-    const styleTarifNavette = isAfficher ? "container-fluid  mb-5 container-AccueilSolutionDeplacement styleShowTarifNavette "  : "container-fluid  mb-5 container-AccueilSolutionDeplacement styleHideTarifNavette"
+    const styleTarifNavette = isAfficher ? "container-fluid  mb-5  styleShowTarifNavette "  : "container-fluid  mb-5  styleHideTarifNavette"
 
     return (
         <div  ref = {elementRef} className={styleTarifNavette}>

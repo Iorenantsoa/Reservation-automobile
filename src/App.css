@@ -24,6 +24,9 @@ p{
 .navbar-container{
     background-color: rgba(255, 255, 255, 0.5);
 }
+Link{
+    color :rgba(0, 0, 0, 0.6);
+}
 .NavLink {
     font-size: 1.2rem;
     font-weight:600
@@ -45,7 +48,7 @@ p{
 
 .container-AccueilSolutionDeplacement{
     width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
     min-height: 50vh;
 }
 .maReservationBtn{
