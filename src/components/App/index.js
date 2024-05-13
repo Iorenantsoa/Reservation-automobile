@@ -6,11 +6,11 @@ import Header from '../Header/Header';
 import Accueil from '../Landing/Accueil';
 import NavettePremium from '../Landing/NavettePremium';
 import ServiceLocation from '../Landing/ServiceLocation';
-import Blog from '../Landing/Blog'
 import Contact from '../Landing/Contact';
 import PageNotFound from '../Landing/PageNotFound';
 import { IconContext } from 'react-icons';
 import Footer from '../Footer/Footer';
+import Map from '../Landing/Map';
 const App = () => {
 
   return (
@@ -29,9 +29,9 @@ const App = () => {
               </Route>
               <Route path='ServicesLocation/' element={<ServiceLocation />} >
                 <Route exact path='Accueil/' element={<Accueil />} />
-              </Route><Route></Route>
-              <Route path='Blog/' element={<Blog />} />
+              </Route>
               <Route path='Contact/' element={<Contact />} />
+              <Route path='Map/' element={<Map />} />
               <Route element={<PageNotFound />} />
             </Routes>
           </div>
@@ -47,3 +47,4 @@ const App = () => {
 }
 
 export default App;
+// AIzaSyBpgUsObCgjKiJyqINMMgPXfYHf0poUktE

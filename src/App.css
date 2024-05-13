@@ -252,3 +252,7 @@ Link{
     color: white;
     transition: 0.5s;
 }
+.map-container {
+    width: 50%;
+    height: 50%vh; 
+}
