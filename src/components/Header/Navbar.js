@@ -44,14 +44,14 @@ const Navbar = () => {
           </button>
           <div className="collapse navbar-collapse  " id="navbarNavAltMarkup">
             <div className="navbar-nav navLink-list ml-3" >
-              <NavLink className={classforLinkNavbar} aria-current="page" to="Accueil/">ACCUEIL</NavLink>
-              <NavLink className={classforLinkNavbar} to="NavettePremium/">NAVETTE PREMIUM</NavLink>
-              <NavLink className={classforLinkNavbar} to="ServicesLocation/">SERVICES DE LOCATION</NavLink>
-              <NavLink className={classforLinkNavbar} to="Contact/">CONTACT</NavLink>
-              <NavLink className={classforLinkNavbar} to="Map/">MAP</NavLink>
+              <NavLink className={classforLinkNavbar} aria-current="page" to="Accueil/" style={{ fontSize: "1rem" }}>ACCUEIL</NavLink>
+              <NavLink className={classforLinkNavbar} to="NavettePremium/" style={{ fontSize: "1rem" }}>NAVETTE PREMIUM</NavLink>
+              <NavLink className={classforLinkNavbar} to="ServicesLocation/" style={{ fontSize: "1rem" }}>SERVICES DE LOCATION</NavLink>
+              <NavLink className={classforLinkNavbar} to="Contact/" style={{ fontSize: "1rem" }}>CONTACT</NavLink>
+              <NavLink className={classforLinkNavbar} to="Map/" style={{ fontSize: "1rem " }}>MAP</NavLink>
             </div> 
           </div>
-          <div >
+          <div className="d-flex flex-row flex-nowrap center " >
             <button className="btn btn-primary mx-1 py-2">Se connecter</button>
             <button className="btn btn-warning mx-1 text-white py-2">S'inscrire</button>
           </div>
